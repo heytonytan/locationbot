@@ -9,12 +9,7 @@ const server = express();
 const apiKey = process.env.APIKEY; // need to swap out into .env file
 
 server.get('/', (req, res) => {
-  location()
-  .then(data => {
-    console.log(data);
-    res.json(data);
-  })
-  .catch(err => console.log(err));  
+  res.send('hello! this is locationbot');  
 });
 
 server.post('/', (req, res) => {
