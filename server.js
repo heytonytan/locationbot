@@ -2,8 +2,8 @@ const express = require('express');
 const request = require('request');
 const location = require('location');
 
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 const server = express();
 const apiKey = process.env.APIKEY; // need to swap out into .env file
