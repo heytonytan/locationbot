@@ -40,8 +40,8 @@ server.post('/', (req, res) => {
           if (err) { 
             console.log(err);
           }
-        });
-        res.end();        
+          res.end(); 
+        });       
       }
     })
     .catch(err => console.log(err));
