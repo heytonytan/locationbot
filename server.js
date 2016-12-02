@@ -2,8 +2,8 @@ const express = require('express');
 const request = require('request');
 const location = require('location');
 
-// const dotenv = require('dotenv');
-// dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 const server = express();
 const apiKey = process.env.APIKEY; // need to swap out into .env file
@@ -13,8 +13,9 @@ server.get('/', (req, res) => {
 });
 
 server.post('/', (req, res) => {
+  console.log('received post request');
   req.on('data', (data) => {
-    console.log('received post request');
+    console.log('received post request data');
     location()
     .then(locationdata => {
       console.log('location request returned');
