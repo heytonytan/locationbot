@@ -14,9 +14,10 @@ server.get('/', (req, res) => {
 
 server.post('/', (req, res) => {
   req.on('data', (data) => {
+    console.log('received post request');
     location()
     .then(locationdata => {
-
+      console.log('location request returned');
       // credits to Chase Starr
       data = JSON.parse(data.toString());
       var message = data.text;
@@ -40,7 +41,7 @@ server.post('/', (req, res) => {
           if (err) { 
             console.log(err);
           }
-          res.end(); 
+          res.end();
         });       
       }
     })
